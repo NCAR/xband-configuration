@@ -1,0 +1,19 @@
+# Freezing Level Colors
+
+<ColorScale id="xband_flag.colors"
+            gradation="linear"
+            saturation="1.0"
+            labelsSetByValue="true">
+
+  <Range min="-0.5" max="0.5"   color="1.0, 1.0, 1.0" />
+  <Range min="0.5"  max="1.5"   color="0.0, 0.0, 1.0" />
+  <Range min="1.5"  max="2.5"   color="0.5, 0.5, 1.0" />
+  <Range min="2.5"  max="3.5"   color="0.0, 1.0, 0.0" />
+
+  <Label value="0"      text="ERA5"      />
+  <Label value="1"      text="Detect"    />
+  <Label value="2"      text="Interp"    />
+  <Label value="3"      text="Estimate"  />
+
+</ColorScale>
+

@@ -1,0 +1,19 @@
+# w-band velocity - fine details around 0
+
+-2.00  -1.50	DeepPink1
+-1.50  -1.25 	maroon
+-1.25  -1.00 	dark orchid
+-1.00  -0.80 	blue
+-0.80  -0.60 	royal blue
+-0.60  -0.40 	deep sky blue
+-0.40  -0.20 	medium spring green
+-0.20  -0.05 	forest green
+-0.05   0.05 	gray
+0.05	0.20 	tan2
+0.20	0.40 	gold1
+0.40 	0.60 	yellow
+0.60 	0.80 	salmon1
+0.80 	1.00 	tomato
+1.00 	1.25 	brown1
+1.25 	1.50 	red
+1.50 	2.0 	firebrick

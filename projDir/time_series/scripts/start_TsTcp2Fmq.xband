@@ -1,0 +1,10 @@
+#! /bin/csh -f
+
+cd $PROJ_DIR/time_series/params
+
+running "TsTcp2Fmq -params TsTcp2Fmq.xband"
+if ($status == 1) then
+  TsTcp2Fmq -params TsTcp2Fmq.xband |& \
+    LogFilter -d $ERRORS_LOG_DIR -p TsTcp2Fmq -i xband &
+endif
+

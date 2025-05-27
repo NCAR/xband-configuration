@@ -1,0 +1,438 @@
+/**********************************************************************
+ * TDRP params for TsPrint
+ **********************************************************************/
+
+//======================================================================
+//
+// TsPrint reads radar time series data from an FMQ, and prints in 
+//   various ways.
+//
+//======================================================================
+ 
+//======================================================================
+//
+// DEBUGGING AND PROCESS CONTROL.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// Debug option.
+// If set, debug messages will be printed appropriately.
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+//     DEBUG_EXTRA
+//
+
+debug = DEBUG_OFF;
+
+///////////// reg_with_procmap ////////////////////////
+//
+// Register with procmap.
+// Type: boolean
+//
+
+reg_with_procmap = TRUE;
+
+///////////// instance ////////////////////////////////
+//
+// Process instance.
+// Used for registration with procmap.
+// Type: string
+//
+
+instance = "xband";
+
+//======================================================================
+//
+// RUN mode.
+//
+//======================================================================
+ 
+///////////// run_mode ////////////////////////////////
+//
+// Run mode.
+// PRINT_MODE: print power, averaged over a number of gates, data to the 
+//   screen, a line at a time. ASCOPE_MODE: print data for a range of 
+//   gates to the screen. CAL_MODE: average the powers for a number of 
+//   gates, and write out in a file suitable for calibration. SERVER_MODE: 
+//   listen on a port, and when a connection is established read an 
+//   incoming set of commands in XML, average power over gates, and 
+//   respond to the client in XML.
+//
+// Type: enum
+// Options:
+//     PRINT_MODE
+//     ASCOPE_MODE
+//     CAL_MODE
+//     SERVER_MODE
+//
+
+run_mode = PRINT_MODE;
+
+//======================================================================
+//
+// PRINT DETAILS.
+//
+//======================================================================
+ 
+///////////// label_interval //////////////////////////
+//
+// Labels will be printed at this number of lines.
+// Type: int
+//
+
+label_interval = 30;
+
+///////////// once_only ///////////////////////////////
+//
+// Just write one data set, then quit.
+// Type: boolean
+//
+
+once_only = FALSE;
+
+///////////// print_all_headers ///////////////////////
+//
+// Print all meta-data headers as they are read.
+// Type: boolean
+//
+
+print_all_headers = FALSE;
+
+///////////// print_all_pulses ////////////////////////
+//
+// Print all pulses as they are read.
+// Type: boolean
+//
+
+print_all_pulses = FALSE;
+
+///////////// print_info_on_change ////////////////////
+//
+// Print ops info in full whenever it changes changes.
+// Type: boolean
+//
+
+print_info_on_change = FALSE;
+
+///////////// print_hv_flag ///////////////////////////
+//
+// Print HV flag for each pulse, comma-delimited.
+// Type: boolean
+//
+
+print_hv_flag = FALSE;
+
+///////////// print_iq_data ///////////////////////////
+//
+// Print IQ data.
+// Uses the stored packing, unless print_iq_data_as_floats is true, in 
+//   which case it prints it as floats.
+// Type: boolean
+//
+
+print_iq_data = FALSE;
+
+//======================================================================
+//
+// DATA INPUT.
+//
+//======================================================================
+ 
+///////////// input_mode //////////////////////////////
+//
+// Input mode - files or time series API.
+// If TS_FMQ_INPUT, the application will read the time series from a 
+//   file message queue and process the pulses as they come in. If 
+//   TS_FILE_INPUT, the application will process all the files specified 
+//   on the command line.
+//
+// Type: enum
+// Options:
+//     TS_FILE_INPUT
+//     TS_FMQ_INPUT
+//
+
+input_mode = TS_FMQ_INPUT;
+
+///////////// input_fmq_name //////////////////////////
+//
+// FMQ name. For TS_FMQ_INPUT only.
+// Path to FMQ files. There are 2 files, one with a .buf extension and 
+//   one with a .stat extention. This path does not include the 
+//   extensions.
+// Type: string
+//
+
+input_fmq_name = "/tmp/fmq/ts/xband/shmem_10000";
+
+///////////// seek_to_end_of_input ////////////////////
+//
+// Option to seek to the end of the input FMQ.
+// If TRUE, the program will seek to the end of the fmq and only read in 
+//   new data. If FALSE, it will start reading from the beginning of the 
+//   FMQ.
+// Type: boolean
+//
+
+seek_to_end_of_input = TRUE;
+
+///////////// dual_channel ////////////////////////////
+//
+// Handle dual channels.
+// Normally, only a single channel is used.
+// Type: boolean
+//
+
+dual_channel = TRUE;
+
+///////////// fast_alternating ////////////////////////
+//
+// Radar is in fast-alternating mode.
+// Type: boolean
+//
+
+fast_alternating = FALSE;
+
+///////////// invert_hv_flag //////////////////////////
+//
+// Option to invert H/V flag in pulse data.
+// Normally, the HV flag is set to 1 for H, 0 for V. If the flag in the 
+//   data has the opposite sense, set this to true.
+// Type: boolean
+//
+
+invert_hv_flag = FALSE;
+
+///////////// rvp8_legacy_unpacking ///////////////////
+//
+// RVP8 TsArchive data is in legacy 11-bit mantissa packing.
+// Type: boolean
+//
+
+rvp8_legacy_unpacking = FALSE;
+
+//======================================================================
+//
+// AVERAGING.
+//
+//======================================================================
+ 
+///////////// n_samples ///////////////////////////////
+//
+// Number of pulse samples in a beam.
+// Type: int
+//
+
+n_samples = 10000;
+
+///////////// start_gate //////////////////////////////
+//
+// Start gate for analysis.
+// Type: int
+//
+
+start_gate = 100;
+
+///////////// n_gates /////////////////////////////////
+//
+// Number of gates for analysis.
+// Type: int
+//
+
+n_gates = 500;
+
+//======================================================================
+//
+// TESTING the PACKING.
+//
+//======================================================================
+ 
+///////////// change_packing //////////////////////////
+//
+// Changing the packing for testing purposes.
+// Type: boolean
+//
+
+change_packing = FALSE;
+
+///////////// packing_type ////////////////////////////
+//
+// Packing of the IQ data for test printing.
+// FL32: 32-bit floating point. COUNTS_UI16: scaled unsigned 16-bit 
+//   integers, as is typical of IQ data directly from an A2D. SCALED_SI16: 
+//   scaled signed 16-bit integers. DBM_PHASE_SI16: signed 16-bit integers 
+//   representing power in dBM and phase in deg. SIGMET_SI16: Sigmet 
+//   16-bit floating point packing as in the RVP8.
+//
+// Type: enum
+// Options:
+//     PACKING_FL32
+//     PACKING_SCALED_SI16
+//     PACKING_DBM_PHASE_SI16
+//     PACKING_SIGMET_FL16
+//
+
+packing_type = PACKING_FL32;
+
+///////////// packing_scale ///////////////////////////
+//
+// Scaling factor for packed IQ data.
+// This applies to the following packing types: COUNTS_UI16, 
+//   SCALED_SI16, DBM_PHASE_SI16.
+
+// For COUNTS_UI16: volts = scaled unsigned_int * scale + offset.
+
+// For SCALED_SI16: volts = scaled signed_int * scale + offset.
+
+// For DBM_PHASE_SI16: dbm = scaled signed_int * scale + offset.
+// Type: double
+//
+
+packing_scale = 1;
+
+///////////// packing_offset //////////////////////////
+//
+// Offset for packed IQ data.
+// See test_scale.
+// Type: double
+//
+
+packing_offset = 0;
+
+//======================================================================
+//
+// SERVER MODE.
+//
+// In server mode, the application listens for connections from clients. 
+//   A client, once connected, passed in a set of commands in XML format. 
+//   TsPrint computes results based on the commands, and returns the 
+//   result also in XML mode.
+//
+//======================================================================
+ 
+///////////// server_port /////////////////////////////
+//
+// Port for listening in server mode.
+// Type: int
+//
+
+server_port = 13000;
+
+//======================================================================
+//
+// SERVER MODE XML COMMANDS.
+//
+// The following lists the XML commands to be sent to TsPrint in server 
+//   mode:
+//   
+//   <TsPrintCommands>
+//     <nSamples>1000</nSamples>
+//     <startGate>50</startGate>
+//     <nGates>500</nGates>
+//     <dualChannel>true</dualChannel>
+//     <fastAlternating>true</fastAlternating>
+//     <labviewRequest>true</labviewRequest>
+//   </TsPrintCommands>
+//   
+//   nSamples: the number of pulses (samples) to be averaged
+//   startGate: the starting gate for averaging
+//   nGates: the number of gates to be averaged
+//   dualChannel: true if 2 channels, false otherwise
+//   fastAlternating: true in dual-pol fast alternating mode, false 
+//   otherwise
+//   labviewReqyest: true if result to be sent in XML suitable for 
+//   labview, false otherwise.
+//
+//======================================================================
+ 
+//======================================================================
+//
+// XML RESULT - NORMAL MODE.
+//
+// The following is an example of the XML result in normal (non-labview) 
+//   mode:
+//   
+//   <TsPrintResponse>
+//     <success>true</success>
+//     <time>2010-05-17T17:00:40</time>
+//     <msecs>863</msecs>
+//     <prf>1000</prf>
+//     <nSamples>1000</nSamples>
+//     <startGate>50</startGate>
+//     <nGates>500</nGates>
+//     <el>0</el>
+//     <az>360</az>
+//     <dbm0>-76.8903</dbm0>
+//     <dbm1>-77.5489</dbm1>
+//     <dbmHc>-76.9409</dbmHc>
+//     <dbmHx>-77.6356</dbmHx>
+//     <dbmVc>-76.8403</dbmVc>
+//     <dbmVx>-77.4638</dbmVx>
+//     <corr01H>0.00378701</corr01H>
+//     <arg01H>-12.0024</arg01H>
+//     <corr01V>0.0010595</corr01V>
+//     <arg01V>58.3829</arg01V>
+//   </TsPrintResponse>.
+//
+//======================================================================
+ 
+//======================================================================
+//
+// XML RESULT - LABVIEW MODE.
+//
+// The following is an example of the XML result in normal (non-labview) 
+//   mode:
+//   
+//   <Cluster>
+//     <Name>RVP8_power</Name>
+//     <NumElts>10</NumElts>
+//     <Boolean>
+//       <Name>success</Name>
+//       <Val>1</Val>
+//     </Boolean>
+//     <DBL>
+//       <Name>time</Name>
+//       <Val>3.3569173307e+09</Val>
+//     </DBL>
+//     <DBL>
+//       <Name>el</Name>
+//       <Val>0</Val>
+//     </DBL>
+//     <DBL>
+//       <Name>az</Name>
+//       <Val>360</Val>
+//     </DBL>
+//     <DBL>
+//       <Name>dbm0</Name>
+//       <Val>-76.8911</Val>
+//     </DBL>
+//     <DBL>
+//       <Name>dbm1</Name>
+//       <Val>-77.5407</Val>
+//     </DBL>
+//     <DBL>
+//       <Name>dbmHc</Name>
+//       <Val>-76.9401</Val>
+//     </DBL>
+//     <DBL>
+//       <Name>dbmHx</Name>
+//       <Val>-77.6436</Val>
+//     </DBL>
+//     <DBL>
+//       <Name>dbmVc</Name>
+//       <Val>-76.8426</Val>
+//     </DBL>
+//     <DBL>
+//       <Name>dbmVx</Name>
+//       <Val>-77.4402</Val>
+//     </DBL>
+//   </Cluster>.
+//
+//======================================================================
+ 

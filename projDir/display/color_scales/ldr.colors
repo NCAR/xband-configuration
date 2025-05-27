@@ -1,0 +1,27 @@
+# colorscale for ldr field, xband
+
+-40	-35	Pink
+-35     -34     HotPink
+-34	-33	Maroon1
+-33	-32 	DeepPink
+-32	-31 	Red
+-31	-30	OrangeRed
+-30     -29     firebrick1
+-29     -28     tomato
+-28	-27 	coral
+-27	-26 	orange
+-26	-25	yellow
+-25     -24  	gold
+-24	-23	Gold3
+-23     -22     yellowgreen
+-22     -20     olivedrab
+-20     -18     forestgreen
+-18     -16     seagreen
+-16     -14     slategray
+-14     -12     dimgray
+-12     -10     midnightblue
+-10     -06     navyblue
+-06     -02     mediumblue
+-02	+02	blue
++02	+06     royalblue3
++06	+10	dodgerblue3

@@ -1,0 +1,107 @@
+#########################################
+# .cshrc file for xband system
+#########################################
+
+if ( $?prompt ) then
+  set prompt = "`hostname`:\!>"
+  set autoexpand
+  set autolist
+  set cdpath = ( ~ )
+  set pushdtohome
+endif
+
+unset autologout
+set autologout=0
+
+umask 002
+
+setenv LROSE_CORE_DIR $HOME/git/lrose-core
+setenv LROSE_INSTALL_DIR $HOME/lrose
+
+# --- RUNTIME ---
+
+setenv DATA_HOST xband-archiver
+setenv PROJ_DIR ~/projDir
+setenv LROSE_INSTALL_DIR ~/lrose
+setenv DATA_DIR $PROJ_DIR/data
+setenv TMP_DIR $DATA_DIR/tmp
+setenv LOG_DIR $DATA_DIR/logs
+setenv DATA_DISTRIB_LOG_DIR $LOG_DIR/distrib
+setenv ERRORS_LOG_DIR $LOG_DIR/status
+setenv RESTART_LOG_DIR $LOG_DIR/restart
+
+setenv PROCMAP_HOST localhost
+setenv DATA_MAPPER_ACTIVE true
+setenv LDATA_FMQ_ACTIVE true
+
+setenv DS_COMM_TIMEOUT_MSECS 60000
+setenv DS_PING_TIMEOUT_MSECS 20000
+
+# --- project info --- 
+
+if (-f $PROJ_DIR/system/params/project_info) then
+  source $PROJ_DIR/system/params/project_info
+endif
+
+# --- Path ---
+
+# Append . to the default path, since some start_* scripts require it in the path
+set path = ($path .)
+
+ 
+# Prepend all 'scripts' directories under $PROJ_DIR to the path
+
+if ( -d $PROJ_DIR ) then
+  # NOTE: the -L in the find command is needed because $PROJ_DIR is generally
+  # a symbolic link
+  foreach scriptdir (`find -L $PROJ_DIR -type d -name scripts`)
+    set path = ($scriptdir $path)
+  end
+endif
+
+# Prepend the LROSE binary directory to the path
+if ( -d $LROSE_INSTALL_DIR/bin ) then
+  set path = ($LROSE_INSTALL_DIR/bin $path)
+endif
+
+set savehist=500
+set path = ($path /usr/lib64/qt5/bin $HOME/anaconda3/bin)
+
+set path = ($path ~/bin \
+	/usr/local/bin /usr/local/sbin /usr/bin/X11 \
+        /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin \
+	/opt/gfortran/irun/bin /opt/spol/bin \
+        /usr/sigmet/bin /usr/sigmet/bin/rda )
+
+# -- core files --
+# unlimit coredumpsize
+
+# --- Aliases ---
+
+if ($?prompt) then
+
+  alias sc source ~/.cshrc
+  alias ssh 'ssh -Y'
+  alias setprompt 'set prompt="(`hostname`) `basename $cwd` ! % "'
+
+  alias rm 'rm -i'
+  alias mv 'mv -i'
+  alias cp 'cp -i' 
+
+  alias df 'df -h'
+
+  alias print_procmap 'print_procmap -hb -up -status'
+  alias PrintDataMap 'PrintDataMap -all -relt -lreg'
+  alias ppm 'print_procmap -hb -up -status'
+  alias pdm 'PrintDataMap -all -relt -lreg'
+  alias dmd 'DataMapper -delete '
+  alias pcheck 'procmap_list_check -proc_list $PROJ_DIR/control/proc_list'
+  alias dcheck 'DataMapper_list_check -data_list $PROJ_DIR/control/data_list'
+  alias pcheckOK 'pcheck -ok'
+  alias dcheckOK 'dcheck -ok'
+  alias ph 'get_host_type'
+
+  setprompt
+
+endif
+

@@ -1,0 +1,8 @@
+#! /bin/csh -f
+
+#
+# restart entire system...
+#
+
+stop_all
+start_all

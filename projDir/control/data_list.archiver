@@ -1,0 +1,8 @@
+#################################################
+# required data for archiver
+#
+# Format is:
+#
+#  dir               late_secs  very_late_secs
+#################################################
+/tmp/fmq/ts/xband/shmem_10000        60   120

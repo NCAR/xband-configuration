@@ -1,0 +1,12 @@
+<ColorScale id="xband_melting_layer.colors"
+            gradation="linear"
+            saturation="1.0"
+            labelsSetByValue="true">
+
+  <Range min="-0.5" max="0.5"  color="0.5, 0.5, 0.5" />
+  <Range min="0.6" max="1.5"  color="0, 1, 1" />
+ 
+  <Label value="0"        text="Single"      />
+  <Label value="1"       text="Multi"      />
+  
+</ColorScale>

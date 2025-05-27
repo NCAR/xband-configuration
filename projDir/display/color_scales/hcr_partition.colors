@@ -1,0 +1,26 @@
+<ColorScale id="xband_partition.colors"
+            gradation="linear"
+            saturation="1.0"
+            labelsSetByValue="true">
+
+  <Range min="13.5" max="14.5"  color="0,0.1,0.6" />
+  <Range min="15.5" max="16.5"  color="0.38,0.42,0.96" />
+  <Range min="17.5" max="18.5"  color="0.65,0.74,0.86" />
+  <Range min="24.5" max="25.5"  color="0.32,0.78,0.59" />
+  <Range min="29.5" max="30.5"  color="0.7,0,0" />
+  <Range min="31.5" max="32.5"  color="1,0,1" />
+  <Range min="33.5" max="34.5"  color="1,1,0" />
+  <Range min="35.5" max="36.5"  color="0.99,0.77,0.22" />
+  <Range min="37.5" max="38.5"  color="1,0,0" />
+
+  <Label value="14"       text="Strat low"      />
+  <Label value="16"       text="Strat mid"      />
+  <Label value="18"       text="Strat high"      />
+  <Label value="25"       text="Mixed"      />
+  <Label value="30"       text="Conv"      />
+  <Label value="32"       text="Conv elev"      />
+  <Label value="34"       text="Conv shallow"      />
+  <Label value="36"       text="Conv mid"      />
+  <Label value="38"       text="Conv deep"      />
+  
+</ColorScale>

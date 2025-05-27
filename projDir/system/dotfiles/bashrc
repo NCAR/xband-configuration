@@ -1,0 +1,78 @@
+# xband_bashrc
+#
+# Bash shell setup for xband
+#
+# If LROSE is not installed under ~/lrose, set the LROSE_INSTALL_DIR environment
+# variable to the correct install location *before* sourcing this script.
+#
+# If your project directory is not ~/projDir, set the PROJ_DIR environment
+# variable to the correct location *before* sourcing this script.
+
+# --- RUNTIME ENVORONMENT ---
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
+export DATA_HOST=archiver
+export PROJ_DIR=$HOME/projDir
+export DATA_DIR=$PROJ_DIR/data
+export TMP_DIR=$DATA_DIR/tmp
+export LOG_DIR=$DATA_DIR/logs
+export DATA_DISTRIB_LOG_DIR=$LOG_DIR/distrib
+export STATUS_LOG_DIR=$LOG_DIR/status
+export ERRORS_LOG_DIR=$STATUS_LOG_DIR
+export RESTART_LOG_DIR=$LOG_DIR/restart
+
+export PROCMAP_HOST=localhost
+export DATA_MAPPER_ACTIVE=true
+export LDATA_FMQ_ACTIVE=true
+
+export DS_COMM_TIMEOUT_MSECS=60000
+export DS_PING_TIMEOUT_MSECS=20000
+
+
+# --- LROSE_INSTALL_DIR ---
+
+# if LROSE_INSTALL_DIR is undefined, set it to the default of "$HOME/lrose"
+if [ -z "$LROSE_INSTALL_DIR" ]; then
+    export LROSE_INSTALL_DIR=$HOME/lrose
+#    echo "xband_bashrc: Setting LROSE_INSTALL_DIR to default: $LROSE_INSTALL_DIR"
+fi
+
+
+# --- PROJ_DIR ---
+
+# If PROJ_DIR is undefined, set it to the default of "$HOME/projDir"
+if [ -z "$PROJ_DIR" ]; then
+    export PROJ_DIR=$HOME/projDir
+    echo "Setting PROJ_DIR to default: $PROJ_DIR"
+fi
+
+
+# --- PATH ---
+
+# Append $LROSE_INSTALL_DIR/bin to the path
+export PATH=$PATH:$LROSE_INSTALL_DIR/bin
+
+# Append all 'scripts' directories under $PROJ_DIR to PATH.
+# NOTE: we need the -L on the find command because PROJ_DIR
+# is generally a symbolic link
+for dir in $(find -L $PROJ_DIR -type d -name scripts); do
+    export PATH="$PATH:$dir"
+done
+
+# --- ALIASES ---
+
+alias print_procmap='print_procmap -hb -up -status'
+alias PrintDataMap='PrintDataMap -all -relt -lreg'
+alias ppm='print_procmap -hb -up -status'
+alias pdm='PrintDataMap -all -relt -lreg'
+alias dmd='DataMapper -delete '
+alias pcheck='procmap_list_check -proc_list $PROJ_DIR/control/proc_list'
+alias dcheck='DataMapper_list_check -data_list $PROJ_DIR/control/data_list'
+alias pcheckOK='pcheck -ok'
+alias dcheckOK='dcheck -ok'
+alias ph='get_host_type'
+alias ssh='ssh -Y'

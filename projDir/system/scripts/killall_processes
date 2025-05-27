@@ -1,0 +1,25 @@
+#!/bin/csh -f
+# kills all processes that may be running on an AOAWS machine 
+# 
+# This is done by running killall on all executable files in
+# ~/projDir/bin
+#
+
+# kill 64-bit processes
+
+set DsServerMgr=`which DsServerMgr`
+set bindir=`dirname $DsServerMgr`
+
+if (-d $bindir) then
+  cd $bindir
+  foreach file (*)
+    if (-f $file && -x $file) then
+      killall -q $file >& /dev/null
+    endif
+  end
+endif
+
+pkill java
+pkill Xvfb
+
+

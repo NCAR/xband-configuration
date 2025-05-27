@@ -1,0 +1,15 @@
+#! /bin/csh
+
+# Run from the source directory
+cd ~/git/xband-fpga/sw/xcontrol
+
+# check if already running
+
+set cmd = "../build/xcontrol/xcontrol --instance ops xcontrol.ops"
+running "$cmd"
+if ($status == 0) then
+    exit 0
+endif
+
+# start xcontrol
+$cmd |& LogFilter -d $ERRORS_LOG_DIR -noLineStamp -p xcontrol -i ops &

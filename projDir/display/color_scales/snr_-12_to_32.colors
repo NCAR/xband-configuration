@@ -1,0 +1,24 @@
+# name snr_-12_to_32.colors
+
+-12    -10      dark green
+-10     -8      dark olive green
+ -8     -6      forest green
+ -6     -4      SpringGreen3
+ -4     -2      medium sea green
+ -2      0      medium aquamarine
+  0      2      medium slate blue
+  2      4      blue
+  4      6      blue4
+  6      8      DarkOrchid4
+  8      10     HotPink4
+ 10      12     maroon
+ 12      14     VioletRed4
+ 14      16     sienna
+ 16      18     chocolate
+ 18      20     goldenrod
+ 20      22     yellow
+ 22      24     dark salmon
+ 24      26     salmon
+ 26      28     firebrick2
+ 28      30     DeepPink1
+ 30      32     light grey

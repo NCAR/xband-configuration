@@ -1,0 +1,16 @@
+<ColorScale id="xband_melting_layer.colors"
+            gradation="linear"
+            saturation="1.0"
+            labelsSetByValue="true">
+
+  <Range min="8.5" max="9.5"  color="1, 0, 1" />
+  <Range min="10.5" max="11.5"  color="0.8, 0.8, 0.8" />
+  <Range min="18.5" max="19.5"  color="0.4, 0.4, 0.4" />
+  <Range min="20.5" max="21.5"  color="0, 1, 1" />
+ 
+  <Label value="9"        text="Warm"      />
+  <Label value="11"       text="Melt warm"      />
+  <Label value="19"       text="Melt cold"      />
+  <Label value="21"       text="Cold"      />
+  
+</ColorScale>

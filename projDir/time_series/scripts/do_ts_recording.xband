@@ -1,0 +1,9 @@
+#! /bin/csh -f
+
+# save for 3600 secs
+# logging will be printed to stderr
+
+cd $PROJ_DIR/time_series/params
+
+snuff "TsSmartSave -params TsSmartSave.xband"
+TsSmartSave -params TsSmartSave.xband -debug -runSecs 3600

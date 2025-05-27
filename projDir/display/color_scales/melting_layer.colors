@@ -1,0 +1,14 @@
+# meltinge layer color scale
+
+# Mike Dixon, June 2021
+
+9.5	10.5	magenta    !belowIceLev
+10.5	11.5	gray	   !ERA5_0deg-below
+11.5	12.5	darkblue   !detect-below
+12.5	13.5	lightblue  !interp-below
+13.5	14.5	green      !est-below
+19.5	20.5	yellow	   !aboveIceLev
+20.5	21.5	white	   !ERA5_0deg-above
+21.5	22.5	red	   !detect-above
+22.5	23.5	orange	   !interp-above
+23.5	24.5	pink	   !est-above

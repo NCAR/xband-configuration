@@ -1,0 +1,30 @@
+###############################################################################
+# SYSTEM processes
+#
+#DsServerMgr   primary    start_DsServerMgr         snuff_inst        
+#DsFmqServer   manager    start_DsFmqServer         snuff_inst        
+#Janitor       logs       start_Janitor.logs        kill_Janitor      
+Scout         primary    start_Scout               kill_Scout        
+#DataMapper    primary    start_DataMapper          kill_DataMapper   
+#
+###############################################################################
+# Saving time series data
+#
+#TsSmartSave   xband      start_TsSmartSave.xband   snuff_inst    
+#
+###############################################################################
+# Moments
+#
+# Dual pulse widths
+#  
+#Ts2Moments    xband      start_inst(moments)       snuff_inst    
+#RadxMon       log.xband  start_inst(moments)       snuff_inst
+###############################################################################
+# TIME SERIES FROM xband
+TsTcp2Fmq     xband      start_TsTcp2Fmq.xband     snuff_inst    
+#
+###############################################################################
+# XControl
+#
+XControl      xband      start_xcontrol.ops        snuff_slow
+#
