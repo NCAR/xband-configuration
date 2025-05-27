@@ -473,7 +473,7 @@ radar_name = "xband";
 //
 // Type: boolean
 
-override_radar_location = $(FIXED_LOCATION_MODE);
+override_radar_location = FALSE;
 
 ///////////// radar_latitude_deg //////////////////////
 //
@@ -483,7 +483,7 @@ override_radar_location = $(FIXED_LOCATION_MODE);
 //
 // Type: double
 
-radar_latitude_deg = $(LATITUDE_DEG);
+radar_latitude_deg = 0;
 
 ///////////// radar_longitude_deg /////////////////////
 //
@@ -493,7 +493,7 @@ radar_latitude_deg = $(LATITUDE_DEG);
 //
 // Type: double
 
-radar_longitude_deg = $(LONGITUDE_DEG);
+radar_longitude_deg = 0;
 
 ///////////// radar_altitude_meters ///////////////////
 //
@@ -503,7 +503,7 @@ radar_longitude_deg = $(LONGITUDE_DEG);
 //
 // Type: double
 
-radar_altitude_meters = $(ALTITUDE_M);
+radar_altitude_meters = 1000;
 
 ///////////// override_gate_geometry //////////////////
 //
@@ -514,7 +514,7 @@ radar_altitude_meters = $(ALTITUDE_M);
 //
 // Type: boolean
 
-override_gate_geometry = TRUE;
+override_gate_geometry = FALSE;
 
 ///////////// gate_spacing_meters /////////////////////
 //
@@ -524,7 +524,7 @@ override_gate_geometry = TRUE;
 //
 // Type: double
 
-gate_spacing_meters = 19.1867;
+gate_spacing_meters = 1;
 
 ///////////// start_range_meters //////////////////////
 //
@@ -1155,66 +1155,6 @@ startup_cal_file = "$(PROJ_DIR)/calibration/data/xband/test.xml";
 
 set_cal_by_pulse_width = FALSE;
 
-///////////// pulse_width_cals ////////////////////////
-//
-// Specify the directories in which the calibration files for each pulse 
-//   width will be stored.
-//
-// See 'set_cal_by_pulse_width'. First, the app will determine which of 
-//   the specified pulse widths best matches the pulse width in the data. 
-//   The closest available pulse width will be used. The corresponding 
-//   directory will then be searched. The cal file in that directory which 
-//   is closest in time to the beam time will be used.
-// You can optionally specify that we check the xmit_rcv_mode and use 
-//   different cal directories for different modes.
-// NOTE - the pulse width is specified in micro-seconds. In addition, 
-//   (a) if override_cal_zdr_correction is true, and zdr_correction_db != 
-//   -9999, then the specified zdr_correction_db is applied, and (b) if 
-//   override_cal_system_phidp is true, and system_phidp_deg != -9999, 
-//   then the specified system phidp is used.
-//
-// Type: struct
-//   typedef struct {
-//      double pulse_width_us;
-//      string cal_dir;
-//      boolean check_xmit_rcv_mode;
-//      xmit_rcv_mode_t xmit_rcv_mode;
-//        Options:
-//          SINGLE_POL
-//          DP_ALT_HV_CO_ONLY
-//          DP_ALT_HV_CO_CROSS
-//          DP_ALT_HV_FIXED_HV
-//          DP_SIM_HV_FIXED_HV
-//          DP_SIM_HV_SWITCHED_HV
-//          DP_H_ONLY_FIXED_HV
-//          DP_V_ONLY_FIXED_HV
-//          SINGLE_POL_V
-//      double zdr_correction_db;
-//      double system_phidp_deg;
-//   }
-//
-// 1D array - variable length.
-
-pulse_width_cals = {
-  {
-    pulse_width_us = 0.256,
-    cal_dir = "$(PROJ_DIR)/moments/params/cal_256ns",
-    check_xmit_rcv_mode = FALSE,
-    xmit_rcv_mode = SINGLE_POL,
-    zdr_correction_db = -9999,
-    system_phidp_deg = -9999
-  }
-  ,
-  {
-    pulse_width_us = 0.512,
-    cal_dir = "$(PROJ_DIR)/moments/params/cal_512ns",
-    check_xmit_rcv_mode = FALSE,
-    xmit_rcv_mode = SINGLE_POL,
-    zdr_correction_db = -9999,
-    system_phidp_deg = -9999
-  }
-};
-
 ///////////// cal_recheck_period //////////////////////
 //
 // Frequency at which to check for new cal (secs).
@@ -1410,14 +1350,6 @@ georef_fixed_location_mode = FALSE;
 // Type: boolean
 
 noise_mon_correct_cal_rx_gain = FALSE;
-
-///////////// noise_mon_spdb_url //////////////////////
-//
-// URL for NoiseMon results in SPDB.
-//
-// Type: string
-
-noise_mon_spdb_url = "$(DATA_DIR)/calibration/spol/noise_mon/sband/spdb";
 
 ///////////// noise_mon_search_margin_secs ////////////
 //
@@ -3522,7 +3454,7 @@ spec_cmd_threshold_for_moments = 0.7;
 //
 // Type: string
 
-output_fmq_url = "/tmp/fmq/moments/50hz.longPulse/shmem_30512";
+output_fmq_url = "/tmp/fmq/moments/xband/shmem_30000";
 
 ///////////// output_moments_in_radx_format ///////////
 //

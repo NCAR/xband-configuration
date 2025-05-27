@@ -17,7 +17,7 @@ Scout         primary    start_Scout               kill_Scout
 #
 # Dual pulse widths
 #  
-#Ts2Moments    xband      start_inst(moments)       snuff_inst    
+Ts2Moments    xband      start_inst(moments)       snuff_inst    
 #RadxMon       log.xband  start_inst(moments)       snuff_inst
 ###############################################################################
 # TIME SERIES FROM xband

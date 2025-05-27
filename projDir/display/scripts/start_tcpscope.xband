@@ -1,9 +1,0 @@
-#! /bin/csh
-
-tcpscope --host archiver --port 12500 &
-
-
-
-
-
-
