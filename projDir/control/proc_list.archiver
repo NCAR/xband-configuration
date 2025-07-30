@@ -21,10 +21,11 @@ Ts2Moments    xband      start_inst(moments)       snuff_inst
 #RadxMon       log.xband  start_inst(moments)       snuff_inst
 ###############################################################################
 # TIME SERIES FROM xband
-TsTcp2Fmq     xband      start_TsTcp2Fmq.xband     snuff_inst    
+#TsTcp2Fmq     xband      start_TsTcp2Fmq.xband     snuff_inst  
+TsUdp2Fmq     xband      start_TsUdp2Fmq.xband     snuff_inst  
 #
 ###############################################################################
 # XControl
 #
-XControl      xband      start_xcontrol.ops        snuff_slow
+xcontrol      ops        start_xcontrol.ops        snuff_inst
 #

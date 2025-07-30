@@ -17,7 +17,6 @@ procmap_list_kill -proc_list $PROJ_DIR/control/proc_list
 # not arrive after stopping the system.
 
 kill_DsServers
-kill_SymprodServers
 
 # kill all processes
 

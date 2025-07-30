@@ -1,0 +1,5 @@
+#! /bin/csh -f
+
+snuff "TsUdp2Fmq -params TsUdp2Fmq.xband"
+start_TsUdp2Fmq.xband
+

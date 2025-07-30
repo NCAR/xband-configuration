@@ -66,25 +66,13 @@ do_not_register_on_read = FALSE;
 
 //======================================================================
 //
-// TCP DETAILS.
+// UDP DETAILS.
 //
 //======================================================================
  
-///////////// ts_tcp_server_host //////////////////////
-//
-// Host name on which time series server is running.
-// Type: string
-//
+///////////// udp_port /////////////////////////
 
-ts_tcp_server_host = "192.168.9.10";
-
-///////////// ts_tcp_server_port //////////////////////
-//
-// TCP/IP port on which time series server is running.
-// Type: int
-//
-
-ts_tcp_server_port = 50000;
+udp_port = 50000;
 
 //======================================================================
 //

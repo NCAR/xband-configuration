@@ -1,6 +1,0 @@
-#! /bin/csh -f
-
-running "xcontrol"
-if ($status == 0) then
-    snuff_slow xcontrol
-endif

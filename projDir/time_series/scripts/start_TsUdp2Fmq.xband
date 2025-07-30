@@ -1,0 +1,10 @@
+#! /bin/csh -f
+
+cd $PROJ_DIR/time_series/params
+
+running "TsUdp2Fmq -params TsUdp2Fmq.xband"
+if ($status == 1) then
+  TsUdp2Fmq -params TsUdp2Fmq.xband |& \
+    LogFilter -d $ERRORS_LOG_DIR -p TsUdp2Fmq -i xband &
+endif
+
