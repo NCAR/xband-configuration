@@ -1,5 +1,7 @@
 #! /bin/csh -f
 
-xterm -title TsPrint -bg black -fg yellow -g 130x30-0+70 -fn fixed -sb -sl 2000 -e ssh archiver TsPrint -params projDir/time_series/params/TsPrint.xband
+xterm -title TsPrint -bg black -fg yellow -g 130x30-0+70 -fn fixed -sb -sl 2000 -e TsPrint -params ~/projDir/time_series/params/TsPrint.xband
+
+#xterm -title TsPrint -bg black -fg yellow -g 130x30-0+70 -fn fixed -sb -sl 2000 -e ssh xband-archiver TsPrint -params ~/projDir/time_series/params/TsPrint.xband
 
 

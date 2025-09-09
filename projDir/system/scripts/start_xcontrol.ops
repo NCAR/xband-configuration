@@ -12,4 +12,4 @@ if ($status == 0) then
 endif
 
 # start xcontrol
-$cmd |& LogFilter -d $ERRORS_LOG_DIR -noLineStamp -p xcontrol -i ops &
+$cmd |& LogFilter -d $ERRORS_LOG_DIR -p xcontrol -i ops &

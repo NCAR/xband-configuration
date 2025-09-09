@@ -49,7 +49,7 @@ beam_count_for_debug_print = 30;
 //
 // Type: string
 
-instance = "50hz.longPulse";
+instance = "xband";
 
 //======================================================================
 //
@@ -726,7 +726,7 @@ moments_params = {
     check_antenna_rate = FALSE,
     antenna_rate_lower_limit = 0,
     antenna_rate_upper_limit = 90,
-    beam_method = BEAM_PULSE_WIDTH_CHANGE,
+    beam_method = BEAM_SPECIFY_N_SAMPLES,
     beam_n_samples = 100,
     beam_angle_deg = 1,
     index_the_beams = FALSE,
@@ -781,7 +781,7 @@ max_n_samples = 100;
 //
 // Type: boolean
 
-specify_fixed_pulse_width = TRUE;
+specify_fixed_pulse_width = FALSE;
 
 ///////////// fixed_pulse_width_us ////////////////////
 //
