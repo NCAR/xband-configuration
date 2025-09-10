@@ -1,15 +1,20 @@
 #! /bin/csh
 
 # Run from the source directory
-cd ~/git/xband-fpga/sw/xcontrol
+cd ~/git/xband-fpga/sw/build/xcontrol
 
 # check if already running
 
-set cmd = "../build/xcontrol/xcontrol --instance ops xcontrol.ops"
+set cmd = "./xcontrol -params $PROJ_DIR/system/params/xcontrol.ops"
 running "$cmd"
 if ($status == 0) then
     exit 0
 endif
+
+# start xdrex
+ssh xband@xband-drex xdrex-app |& LogFilter -d $ERRORS_LOG_DIR -p xdrex-app -i ops &
+
+sleep 10
 
 # start xcontrol
 $cmd |& LogFilter -d $ERRORS_LOG_DIR -p xcontrol -i ops &

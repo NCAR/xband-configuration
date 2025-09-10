@@ -3834,7 +3834,7 @@ censoring_min_valid_run = 3;
 output_fields = {
   {
     id = DBZ,
-    name = "DBZ_long",
+    name = "DBZ",
     units = "dBZ",
     scale = 0.01,
     bias = -320,
@@ -3844,7 +3844,7 @@ output_fields = {
   ,
   {
     id = DBZHC,
-    name = "DBZHC_long",
+    name = "DBZHC",
     units = "dBZ",
     scale = 0.01,
     bias = -320,
@@ -3854,7 +3854,7 @@ output_fields = {
   ,
   {
     id = DBZVC,
-    name = "DBZVC_long",
+    name = "DBZVC",
     units = "dBZ",
     scale = 0.01,
     bias = -320,
@@ -3864,7 +3864,7 @@ output_fields = {
   ,
   {
     id = VEL_CORR_MOTION,
-    name = "VEL_long",
+    name = "VEL",
     units = "m/s",
     scale = 0.01,
     bias = -320,
@@ -3874,7 +3874,7 @@ output_fields = {
   ,
   {
     id = VEL_CORR_VERT,
-    name = "VEL_VERT_long",
+    name = "VEL_VERT",
     units = "m/s",
     scale = 0.01,
     bias = -320,
@@ -3884,7 +3884,7 @@ output_fields = {
   ,
   {
     id = VEL,
-    name = "VEL_RAW_long",
+    name = "VEL_RAW",
     units = "m/s",
     scale = 0.01,
     bias = -320,
@@ -3894,7 +3894,7 @@ output_fields = {
   ,
   {
     id = WIDTH,
-    name = "WIDTH_long",
+    name = "WIDTH",
     units = "m/s",
     scale = 0.001,
     bias = -0.01,
@@ -3904,7 +3904,7 @@ output_fields = {
   ,
   {
     id = SNR,
-    name = "SNR_long",
+    name = "SNR",
     units = "dB",
     scale = 0.01,
     bias = -320,
@@ -3914,7 +3914,7 @@ output_fields = {
   ,
   {
     id = SNRHC,
-    name = "SNRHC_long",
+    name = "SNRHC",
     units = "dB",
     scale = 0.01,
     bias = -320,
@@ -3924,7 +3924,7 @@ output_fields = {
   ,
   {
     id = SNRVC,
-    name = "SNRVC_long",
+    name = "SNRVC",
     units = "dB",
     scale = 0.01,
     bias = -320,
@@ -3934,7 +3934,7 @@ output_fields = {
   ,
   {
     id = SNRHX,
-    name = "SNRHX_long",
+    name = "SNRHX",
     units = "dB",
     scale = 0.01,
     bias = -320,
@@ -3944,7 +3944,7 @@ output_fields = {
   ,
   {
     id = SNRVX,
-    name = "SNRVX_long",
+    name = "SNRVX",
     units = "dB",
     scale = 0.01,
     bias = -320,
@@ -3954,57 +3954,57 @@ output_fields = {
   ,
   {
     id = DBMHC,
-    name = "DBMHC_long",
+    name = "DBMHC",
     units = "dBm",
     scale = 0.01,
     bias = -320,
     write_unfiltered = TRUE,
-    write_filtered = FALSE
+    write_filtered = TRUE
   }
   ,
   {
     id = DBMVC,
-    name = "DBM_long",
+    name = "DBM",
     units = "dBm",
     scale = 0.01,
     bias = -320,
     write_unfiltered = TRUE,
-    write_filtered = FALSE
+    write_filtered = TRUE
   }
   ,
   {
     id = DBMVC,
-    name = "DBMVC_long",
+    name = "DBMVC",
     units = "dBm",
     scale = 0.01,
     bias = -320,
     write_unfiltered = TRUE,
-    write_filtered = FALSE
+    write_filtered = TRUE
   }
   ,
   {
     id = DBMHX,
-    name = "DBMHX_long",
+    name = "DBMHX",
     units = "dBm",
     scale = 0.01,
     bias = -320,
     write_unfiltered = TRUE,
-    write_filtered = FALSE
+    write_filtered = TRUE
   }
   ,
   {
     id = DBMVX,
-    name = "DBMVX_long",
+    name = "DBMVX",
     units = "dBm",
     scale = 0.01,
     bias = -320,
     write_unfiltered = TRUE,
-    write_filtered = FALSE
+    write_filtered = TRUE
   }
   ,
   {
     id = NCP,
-    name = "NCP_long",
+    name = "NCP",
     units = "",
     scale = 0.0001,
     bias = -0.01,
@@ -4014,7 +4014,7 @@ output_fields = {
   ,
   {
     id = LDR,
-    name = "LDR_long",
+    name = "LDR",
     units = "dB",
     scale = 0.01,
     bias = -320,
@@ -4024,7 +4024,7 @@ output_fields = {
   ,
   {
     id = LDRHM,
-    name = "LDRH_long",
+    name = "LDRH",
     units = "dB",
     scale = 0.01,
     bias = -320,
@@ -4034,7 +4034,7 @@ output_fields = {
   ,
   {
     id = LDRVM,
-    name = "LDRV_long",
+    name = "LDRV",
     units = "dB",
     scale = 0.01,
     bias = -320,

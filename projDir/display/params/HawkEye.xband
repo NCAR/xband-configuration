@@ -344,8 +344,8 @@ color_scale_dir = "$(PROJ_DIR)/display/color_scales";
 
 fields = {
   {
-    label = "DBZ_short",
-    raw_name = "DBZ_short",
+    label = "DBZ",
+    raw_name = "DBZ",
     filtered_name = "",
     units = "dBZ",
     color_map = "dbz_w.colors",
@@ -353,8 +353,8 @@ fields = {
   }
   ,
   {
-    label = "VEL_short",
-    raw_name = "VEL_short",
+    label = "VEL",
+    raw_name = "VEL",
     filtered_name = "",
     units = "m/s",
     color_map = "vel_w_8.colors",
@@ -362,8 +362,8 @@ fields = {
   }
   ,
   {
-    label = "VEL_RAW_short",
-    raw_name = "VEL_RAW_short",
+    label = "VEL_RAW",
+    raw_name = "VEL_RAW",
     filtered_name = "",
     units = "m/s",
     color_map = "vel_w_8.colors",
@@ -371,8 +371,8 @@ fields = {
   }
   ,
   {
-    label = "WIDTH_short",
-    raw_name = "WIDTH_short",
+    label = "WIDTH",
+    raw_name = "WIDTH",
     filtered_name = "",
     units = "m/s",
     color_map = "width_w.colors",
@@ -380,8 +380,8 @@ fields = {
   }
   ,
   {
-    label = "SNR_short",
-    raw_name = "SNR_short",
+    label = "SNR",
+    raw_name = "SNR",
     filtered_name = "",
     units = "dB",
     color_map = "snr.colors",
@@ -389,8 +389,8 @@ fields = {
   }
   ,
   {
-    label = "SNRVC_short",
-    raw_name = "SNRVC_short",
+    label = "SNRVC",
+    raw_name = "SNRVC",
     filtered_name = "",
     units = "dB",
     color_map = "snr.colors",
@@ -398,8 +398,8 @@ fields = {
   }
   ,
   {
-    label = "SNRHX_short",
-    raw_name = "SNRHX_short",
+    label = "SNRHX",
+    raw_name = "SNRHX",
     filtered_name = "",
     units = "dB",
     color_map = "snr.colors",
@@ -407,8 +407,8 @@ fields = {
   }
   ,
   {
-    label = "DBM_short",
-    raw_name = "DBM_short",
+    label = "DBM",
+    raw_name = "DBM",
     filtered_name = "",
     units = "dBm",
     color_map = "dbm.colors",
@@ -416,17 +416,8 @@ fields = {
   }
   ,
   {
-    label = "DBMVC_short",
-    raw_name = "DBMVC_short",
-    filtered_name = "",
-    units = "dBm",
-    color_map = "dbm.colors",
-    shortcut = "c"
-  }
-  ,
-  {
-    label = "DBMHX_short",
-    raw_name = "DBMHX_short",
+    label = "DBMVC",
+    raw_name = "DBMVC",
     filtered_name = "",
     units = "dBm",
     color_map = "dbm.colors",
@@ -434,8 +425,17 @@ fields = {
   }
   ,
   {
-    label = "NCP_short",
-    raw_name = "NCP_short",
+    label = "DBMHX",
+    raw_name = "DBMHX",
+    filtered_name = "",
+    units = "dBm",
+    color_map = "dbm.colors",
+    shortcut = "e"
+  }
+  ,
+  {
+    label = "NCP",
+    raw_name = "NCP",
     filtered_name = "",
     units = "",
     color_map = "ncp.colors",
@@ -443,8 +443,8 @@ fields = {
   }
   ,
   {
-    label = "LDR_short",
-    raw_name = "LDR_short",
+    label = "LDR",
+    raw_name = "LDR",
     filtered_name = "",
     units = "dB",
     color_map = "ldr.colors",

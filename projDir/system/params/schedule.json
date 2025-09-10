@@ -1,0 +1,31 @@
+{
+    "Comment":[" These values are used anywhere below where Default is specified. ",
+               " FilterSelects: Passthrough 256ns 384ns 512ns 640ns 768ns 896ns 1024ns ",
+               " Polarizations: H V HHVV ",
+               " Setting NumRxGates too long is allowed, it will be truncated. "],
+
+    "Schedules": [
+
+        {
+            "Name": "ShortPulse",
+            "Enabled": true,
+            "Comment": "Short pulse 256 us",
+            "Blocks": [
+                {
+                    "TxPulseWidth": 200e-9,
+                    "FilterSelect": "256ns",
+                    "NumRxGates": 2000,
+                    "NumBurstGates": 0,
+                    "NumPulses": 100,
+                    "PRT1": 0.0005,
+                    "PRT2": 0,
+                    "BlockPostTime": 0,
+                    "PolarizationMode": "V",
+                    "PhaseTableBegin": 0,
+                    "PhaseTableEnd": 0
+                }
+            ]
+        }
+    ]
+}
+
