@@ -3,12 +3,20 @@
 # Run from the source directory
 cd ~/git/xband-fpga/sw/build/xcontrol
 
-# check if already running
-
 set cmd = "./xcontrol -params $PROJ_DIR/system/params/xcontrol.ops"
+
+# check if already running
 running "$cmd"
 if ($status == 0) then
+    echo "xcontrol already running"
     exit 0
+endif
+
+# check if the drex can be pinged
+ping -c 1 xband-drex >/dev/null
+if ($status != 0) then
+    echo "Can't ping xband-drex"
+    exit 1
 endif
 
 # start xdrex

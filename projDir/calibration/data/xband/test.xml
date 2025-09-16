@@ -1,46 +1,46 @@
 <DsRadarCalib>
   <radarName>XBAND</radarName>
   <calibTime>2014-08-25T22:24:58</calibTime>
-  <wavelengthCm>0.317556</wavelengthCm>
-  <beamWidthDegH>0.75</beamWidthDegH>
-  <beamWidthDegV>0.72</beamWidthDegV>
-  <antGainDbH>46.5</antGainDbH>
-  <antGainDbV>46.7</antGainDbV>
+  <wavelengthCm>3</wavelengthCm>
+  <beamWidthDegH>1</beamWidthDegH>
+  <beamWidthDegV>1</beamWidthDegV>
+  <antGainDbH>40</antGainDbH>
+  <antGainDbV>40</antGainDbV>
   <pulseWidthUs>0.256</pulseWidthUs>
-  <xmitPowerDbmH>59.34</xmitPowerDbmH>
-  <xmitPowerDbmV>59.99</xmitPowerDbmV>
+  <xmitPowerDbmH>60</xmitPowerDbmH>
+  <xmitPowerDbmV>60</xmitPowerDbmV>
   <twoWayWaveguideLossDbH>0</twoWayWaveguideLossDbH>
   <twoWayWaveguideLossDbV>0</twoWayWaveguideLossDbV>
   <twoWayRadomeLossDbH>0.6</twoWayRadomeLossDbH>
   <twoWayRadomeLossDbV>0.6</twoWayRadomeLossDbV>
   <receiverMismatchLossDb>1.1</receiverMismatchLossDb>
   <kSquaredWater>0.711</kSquaredWater>
-  <radarConstH>73.2624</radarConstH>
-  <radarConstV>72.6124</radarConstV>
-  <noiseDbmHc>-60.7007</noiseDbmHc>
-  <noiseDbmHx>-60.7007</noiseDbmHx>
-  <noiseDbmVc>-62.3553</noiseDbmVc>
-  <noiseDbmVx>-62.3553</noiseDbmVx>
-  <i0DbmHc>-65.5885</i0DbmHc>
-  <i0DbmHx>-65.5885</i0DbmHx>
-  <i0DbmVc>-100.604</i0DbmVc>
-  <i0DbmVx>-100.604</i0DbmVx>
-  <receiverGainDbHc>4.88775</receiverGainDbHc>
-  <receiverGainDbHx>4.88775</receiverGainDbHx>
-  <receiverGainDbVc>38.249</receiverGainDbVc>
-  <receiverGainDbVx>38.249</receiverGainDbVx>
-  <receiverSlopeDbHc>0.195065</receiverSlopeDbHc>
-  <receiverSlopeDbHx>0.195065</receiverSlopeDbHx>
-  <receiverSlopeDbVc>1.02279</receiverSlopeDbVc>
-  <receiverSlopeDbVx>1.02279</receiverSlopeDbVx>
-  <dynamicRangeDbHc>-5.4752</dynamicRangeDbHc>
-  <dynamicRangeDbHx>-5.4752</dynamicRangeDbHx>
-  <dynamicRangeDbVc>71.7933</dynamicRangeDbVc>
-  <dynamicRangeDbVx>71.7933</dynamicRangeDbVx>
-  <baseDbz1kmHc>16.7228</baseDbz1kmHc>
-  <baseDbz1kmHx>16.7228</baseDbz1kmHx>
-  <baseDbz1kmVc>-27.9754</baseDbz1kmVc>
-  <baseDbz1kmVx>-27.9754</baseDbz1kmVx>
+  <radarConstH>70</radarConstH>
+  <radarConstV>70</radarConstV>
+  <noiseDbmHc>-110</noiseDbmHc>
+  <noiseDbmHx>-110</noiseDbmHx>
+  <noiseDbmVc>-110</noiseDbmVc>
+  <noiseDbmVx>-110</noiseDbmVx>
+  <i0DbmHc>-60</i0DbmHc>
+  <i0DbmHx>-60</i0DbmHx>
+  <i0DbmVc>-100</i0DbmVc>
+  <i0DbmVx>-100</i0DbmVx>
+  <receiverGainDbHc>40</receiverGainDbHc>
+  <receiverGainDbHx>40</receiverGainDbHx>
+  <receiverGainDbVc>40</receiverGainDbVc>
+  <receiverGainDbVx>40</receiverGainDbVx>
+  <receiverSlopeDbHc>1</receiverSlopeDbHc>
+  <receiverSlopeDbHx>1</receiverSlopeDbHx>
+  <receiverSlopeDbVc>1</receiverSlopeDbVc>
+  <receiverSlopeDbVx>1</receiverSlopeDbVx>
+  <dynamicRangeDbHc>80</dynamicRangeDbHc>
+  <dynamicRangeDbHx>80</dynamicRangeDbHx>
+  <dynamicRangeDbVc>80</dynamicRangeDbVc>
+  <dynamicRangeDbVx>80</dynamicRangeDbVx>
+  <baseDbz1kmHc>-80</baseDbz1kmHc>
+  <baseDbz1kmHx>-80</baseDbz1kmHx>
+  <baseDbz1kmVc>-80</baseDbz1kmVc>
+  <baseDbz1kmVx>-80</baseDbz1kmVx>
   <sunPowerDbmHc>-9999</sunPowerDbmHc>
   <sunPowerDbmHx>-9999</sunPowerDbmHx>
   <sunPowerDbmVc>-9999</sunPowerDbmVc>
