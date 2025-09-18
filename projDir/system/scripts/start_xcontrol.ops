@@ -19,10 +19,10 @@ if ($status != 0) then
     exit 1
 endif
 
+# start xcontrol
+$cmd |& LogFilter -d $ERRORS_LOG_DIR -p xcontrol -i ops &
+
 # start xdrex
 ssh xband@xband-drex xdrex-app |& LogFilter -d $ERRORS_LOG_DIR -p xdrex-app -i ops &
 
-sleep 10
 
-# start xcontrol
-$cmd |& LogFilter -d $ERRORS_LOG_DIR -p xcontrol -i ops &
